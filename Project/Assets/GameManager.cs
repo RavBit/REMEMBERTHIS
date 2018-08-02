@@ -96,6 +96,8 @@ public class GameManager : MonoBehaviour {
         Destroy(ContentManager.instance.gameObject);
         Destroy(MemoryManager.instance.gameObject);
         SceneManager.LoadScene("Home");
-
+        GameObject.Find("Down_Arrow").SetActive(true);
+        GameObject obj = GameObject.Find("SFX_REWARD");
+        obj.GetComponent<AudioSource>().Play();
     }
 }

@@ -25,6 +25,9 @@ public class Plant_Reward : MonoBehaviour, IDragHandler, IEndDragHandler
         plantable_land.GetComponent<RawImage>().texture = toBePlanted.GetComponent<Image>().mainTexture;
         plantable_land.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
         toBePlanted.SetActive(false);
+        GameObject.Find("Down_Arrow").SetActive(false);
+        GameObject obj = GameObject.Find("SFX_FLOWER_PLANTED");
+        obj.GetComponent<AudioSource>().Play();
     }
 
     public void OnEndDrag(PointerEventData eventData)
