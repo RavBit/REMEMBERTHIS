@@ -732,6 +732,7 @@ MonoBehaviour:
     success: 0
     error: 
     name: 
+    ID: 0
 --- !u!4 &814841182
 Transform:
   m_ObjectHideFlags: 0

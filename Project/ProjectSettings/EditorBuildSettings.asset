@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sergi/Scenes/Home.unity
     guid: 1167233917945514d938ce71c2580567
+  - enabled: 1
+    path: Assets/Sergi/Scenes/Memory.unity
+    guid: 95a69a6e0be55114e9cdc8760596b901
   m_configObjects: {}

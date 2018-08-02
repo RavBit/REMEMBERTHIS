@@ -5,11 +5,24 @@ using UnityEngine;
 
 public class MemoryManager : MonoBehaviour
 {
+    public static MemoryManager instance;
+
     [SerializeField]
     public List<Memories> _memories;
     public List<Memories> _seenmemories;
-    //[SerializeField]
-    //List<Item_ID> _itemid;
+
+    [SerializeField]
+    public Memories _currentmemory;
+
+    // Makes sure the App_Manager does not get destroyed & Singleton 
+    void Awake()
+    {
+        if (instance != null)
+            Debug.LogError("More than one Memory Manager in the scene");
+        else
+            instance = this;
+        DontDestroyOnLoad(transform.gameObject);
+    }
 
     private void Start()
     {
@@ -50,7 +63,6 @@ public class MemoryManager : MonoBehaviour
     }
 
 }
-
 
 [System.Serializable]
 public class Memories
