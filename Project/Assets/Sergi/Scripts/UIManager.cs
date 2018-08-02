@@ -5,12 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour {
     public Text PatientName;
+    public GameObject BackgroundImage;
+
 	// Use this for initialization
 	void Awake () {
         EventManager.UIInit += SetPatientInfo;
         EventManager.UI_Init();
-	}
+
+    }
 	
+
     void SetPatientInfo()
     {
         PatientName.text = "Welcome " + AppManager.instance.User.name + "!";

@@ -68,11 +68,12 @@ public class MemoryManager : MonoBehaviour
 public class Memories
 {
     public int ID;
-    public string caretaker_id;
+    public string caretaker_ID;
     public string name;
     public string description;
     public string video;
     public string sound;
     public string date;
+    public int thumbnail;
     public int seen;
 }

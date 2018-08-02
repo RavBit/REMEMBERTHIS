@@ -509,6 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PatientName: {fileID: 24228169}
+  BackgroundImage: {fileID: 0}
 --- !u!4 &444833269
 Transform:
   m_ObjectHideFlags: 0
