@@ -72,6 +72,8 @@ public class GameManager : MonoBehaviour {
             VR[_currentmemory].PlayFinishedVideo();
             Debug.Log("RIGHT!!");
             MM.StartCoroutine("UpdateResources");
+            PlayerPrefs.SetInt("FlowerPlanting", 1);
+            PlayerPrefs.SetInt("MemoryID", MemoryManager.instance._currentmemory.ID);
             EndBorder.gameObject.SetActive(true);
             EndBorder.DOFade(0.7f, 30);
         }

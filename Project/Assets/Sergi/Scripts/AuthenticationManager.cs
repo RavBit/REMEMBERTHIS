@@ -29,7 +29,9 @@ public class AuthenticationManager : MonoBehaviour
 
     private void Start()
     {
-        Screen.orientation = ScreenOrientation.Portrait;
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        PlayerPrefs.SetInt("FlowerPlanting", 0);
+        PlayerPrefs.SetInt("MemoryID", 0);
     }
 
     public void Login_Press()
