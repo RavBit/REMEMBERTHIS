@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour {
             {
                 VideoPlayers[i].url = MemoryManager.instance._currentmemory.video;
                 VR[i].ThumbnailImage.sprite = ContentManager.instance.Thumbnails[MemoryManager.instance._currentmemory.thumbnail];
+                GameObject.Find("Background_Music").GetComponent<AudioSource>().clip = ContentManager.instance.Sounds[MemoryManager.instance._currentmemory.sound];
+                GameObject.Find("Background_Music").GetComponent<AudioSource>().DOFade(1, 0.1f);
+                GameObject.Find("Background_Music").GetComponent<AudioSource>().Play();
             }
             else
             {
