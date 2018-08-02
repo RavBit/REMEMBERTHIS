@@ -6,7 +6,7 @@ using UnityEngine;
 public class MemoryManager : MonoBehaviour
 {
     public static MemoryManager instance;
-
+    public int tries = 1;
     [SerializeField]
     public List<Memories> _memories;
     public List<Memories> _seenmemories;

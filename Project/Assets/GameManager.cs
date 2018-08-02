@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 public class GameManager : MonoBehaviour {
     public VideoPlayer[] VideoPlayers;
+    public MeasuringManager MM;
     public Video_Controller[] VR;
     public GameObject BackgroundImage;
 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour {
 
     [Header("End screen stuff")]
     public GameObject EndResult;
+    public Image EndBorder;
     public Text EndText;
 
     private void Awake()
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour {
     {
         EndText.gameObject.SetActive(false);
         EndText.DOFade(0, 0.1f);
+        EndBorder.gameObject.SetActive(false);
+        EndBorder.DOFade(0, 0.1f);
         DivideVideos();
     }
     void DivideVideos()
@@ -67,11 +71,15 @@ public class GameManager : MonoBehaviour {
         {
             VR[_currentmemory].PlayFinishedVideo();
             Debug.Log("RIGHT!!");
+            MM.StartCoroutine("UpdateResources");
+            EndBorder.gameObject.SetActive(true);
+            EndBorder.DOFade(0.7f, 30);
         }
         else
         {
             Destroy(PolaroidObject[number].gameObject);
             Debug.Log("Wrong");
+            MemoryManager.instance.tries = MemoryManager.instance.tries + 1;
         }
     }
 
