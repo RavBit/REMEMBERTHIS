@@ -67,10 +67,12 @@ public class GameManager : MonoBehaviour {
 
     public void ChooseVideo(int number)
     {
+        GameObject audioData;
         if(number == _currentmemory)
         {
             VR[_currentmemory].PlayFinishedVideo();
-            Debug.Log("RIGHT!!");
+            audioData = GameObject.Find("SFX_RIGHT_CHOICE");
+            audioData.GetComponent<AudioSource>().Play();
             MM.StartCoroutine("UpdateResources");
             PlayerPrefs.SetInt("FlowerPlanting", 1);
             PlayerPrefs.SetInt("MemoryID", MemoryManager.instance._currentmemory.ID);
@@ -80,7 +82,8 @@ public class GameManager : MonoBehaviour {
         else
         {
             Destroy(PolaroidObject[number].gameObject);
-            Debug.Log("Wrong");
+            audioData = GameObject.Find("SFX_WRONG_CHOICE");
+            audioData.GetComponent<AudioSource>().Play();
             MemoryManager.instance.tries = MemoryManager.instance.tries + 1;
         }
     }
