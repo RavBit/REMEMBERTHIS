@@ -72,7 +72,7 @@ public class Memories
     public string name;
     public string description;
     public string video;
-    public string sound;
+    public int sound;
     public string date;
     public int thumbnail;
     public int seen;

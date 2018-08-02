@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ContentManager : MonoBehaviour {
     public Sprite[] Thumbnails;
-    public AudioClip Sounds;
+    public AudioClip[] Sounds;
     public static ContentManager instance;
 
 
