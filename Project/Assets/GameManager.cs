@@ -35,8 +35,9 @@ public class GameManager : MonoBehaviour {
     }
     void DivideVideos()
     {
-        _currentmemory = Random.Range(0, 2);
+        _currentmemory = 0;
         Debug.Log("CURRENTMEMORY " + _currentmemory);
+        MemoryManager.instance._currentmemory = MemoryManager.instance._memories[_currentmemory];
         for (int i = 0; i < VideoPlayers.Length; i++)
         {
             if(i == _currentmemory)
@@ -47,11 +48,10 @@ public class GameManager : MonoBehaviour {
                 GameObject.Find("Background_Music").GetComponent<AudioSource>().DOFade(1, 0.1f);
                 GameObject.Find("Background_Music").GetComponent<AudioSource>().Play();
             }
-            else
+            if(i > 0)
             {
-                int r = Random.Range(0, MemoryManager.instance._memories.Count);
-                VideoPlayers[i].url = MemoryManager.instance._memories[r].video;
-                VR[i].ThumbnailImage.sprite = ContentManager.instance.Thumbnails[MemoryManager.instance._memories[r].thumbnail];
+                VideoPlayers[i].url = MemoryManager.instance._memories[i].video;
+                VR[i].ThumbnailImage.sprite = ContentManager.instance.Thumbnails[MemoryManager.instance._memories[i].thumbnail];
             }
         }
     }
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour {
         Destroy(ContentManager.instance.gameObject);
         Destroy(MemoryManager.instance.gameObject);
         SceneManager.LoadScene("Home");
-        GameObject.Find("Down_Arrow").SetActive(true);
+        //GameObject.Find("Down_Arrow").SetActive(true);
         GameObject obj = GameObject.Find("SFX_REWARD");
         obj.GetComponent<AudioSource>().Play();
     }

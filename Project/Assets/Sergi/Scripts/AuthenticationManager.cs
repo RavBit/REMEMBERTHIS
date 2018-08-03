@@ -29,7 +29,7 @@ public class AuthenticationManager : MonoBehaviour
 
     private void Start()
     {
-        GameObject.Find("Down_Arrow").SetActive(false);
+        //GameObject.Find("Down_Arrow").SetActive(false);
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         PlayerPrefs.SetInt("FlowerPlanting", 0);
         PlayerPrefs.SetInt("MemoryID", 0);
@@ -37,7 +37,7 @@ public class AuthenticationManager : MonoBehaviour
 
     public void Login_Press()
     {
-        GameObject obj = GameObject.Find("SFX_FLOWER_PLANTED");
+        GameObject obj = GameObject.Find("SFX_LOGIN_PRESSED");
         obj.GetComponent<AudioSource>().Play();
 
         //Start login in and starting the corountine

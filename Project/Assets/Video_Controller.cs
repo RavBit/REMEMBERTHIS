@@ -24,7 +24,7 @@ public class Video_Controller : MonoBehaviour {
         GM.GetComponent<RawImage>().DOFade(1, 1f);
         GM.GetComponent<Transform>().DOScaleY(1, 1);
         VP.Play();
-        Invoke("StopVideo", 12);
+        Invoke("StopVideo", 8);
     }
     public void PlayFinishedVideo()
     {
@@ -41,7 +41,7 @@ public class Video_Controller : MonoBehaviour {
         GameObject.Find("Background_Music").GetComponent<AudioSource>().DOFade(1, 0.75f);
         GameObject.Find("Background_Music").GetComponent<AudioSource>().Play();
         VP.Play();
-        Invoke("EndVideo", 30);
+        Invoke("EndVideo", 16);
     }
 
     void EndVideo()
